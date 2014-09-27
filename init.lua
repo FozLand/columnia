@@ -644,3 +644,4 @@ columnia.register_column_ia("junglewood", "default:junglewood",
 		"Junglewood Column Link",
 		"Junglewood Column Linkdown",
 		default.node_sound_wood_defaults())
+
