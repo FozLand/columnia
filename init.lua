@@ -647,30 +647,31 @@ columnia.register_column_ia("junglewood", "default:junglewood",
 
 if core.get_modpath('moretrees') then
 	local morewood = {
-		{ name='beech',			description='Beech Tree' },
-		{ name='apple_tree',	description='Apple Tree' },
-		{ name='oak',			description='Oak Tree' },
-		{ name='sequoia',		description='Giant Sequoia' },
-		{ name='birch',			description='Birch Tree' },
-		{ name='palm',			description='Palm Tree', },
-		{ name='spruce',		description='Spruce Tree' },
-		{ name='pine',			description='Pine Tree' },
-		{ name='willow',		description='Willow Tree' },
-		{ name='acacia',		description='Acacia Tree' },
-		{ name='rubber_tree',	description='Rubber Tree' },
-		{ name='fir',			description='Douglas Fir' }
+		{ name='beech',       desc = 'Beech Tree',    mod = 'moretrees'},
+		{ name='apple_tree',  desc = 'Apple Tree',    mod = 'moretrees'},
+		{ name='oak',         desc = 'Oak Tree',      mod = 'moretrees'},
+		{ name='sequoia',     desc = 'Giant Sequoia', mod = 'moretrees'},
+		{ name='birch',       desc = 'Birch Tree',    mod = 'moretrees'},
+		{ name='palm',        desc = 'Palm Tree',     mod = 'moretrees'},
+		{ name='spruce',      desc = 'Spruce Tree',   mod = 'moretrees'},
+		{ name='pine',        desc = 'Pine Tree',     mod = 'default'  },
+		{ name='willow',      desc = 'Willow Tree',   mod = 'moretrees'},
+		{ name='acacia',      desc = 'Acacia Tree',   mod = 'default'  },
+		{ name='rubber_tree', desc = 'Rubber Tree',   mod = 'moretrees'},
+		{ name='fir',         desc = 'Douglas Fir',   mod = 'moretrees'},
 	}
 	for _,t in pairs( morewood ) do
 		columnia.register_column_ia( t.name, 'moretrees:' .. t.name ..'_planks',
 			{snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
-			{ 'moretrees_' .. t.name .. '_wood.png' },
-			t.description .. ' Column',
-			t.description .. ' Column Top',
-			t.description .. ' Column Bottom',
-			t.description .. ' Column Crosslink',
-			t.description .. ' Column Link',
-			t.description .. ' Column Linkdown',
-			default.node_sound_wood_defaults())
+			{ t.mod .. '_' .. t.name .. '_wood.png' },
+			t.desc .. ' Column',
+			t.desc .. ' Column Top',
+			t.desc .. ' Column Bottom',
+			t.desc .. ' Column Crosslink',
+			t.desc .. ' Column Link',
+			t.desc .. ' Column Linkdown',
+			default.node_sound_wood_defaults()
+		)
 	end
 end
 
